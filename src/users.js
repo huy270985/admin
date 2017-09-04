@@ -4,8 +4,12 @@ import { List, Edit, Create, Datagrid, ReferenceField, TextField,
 	EditButton, DisabledInput, LongTextInput, ReferenceInput, 
 	SelectInput, SimpleForm, TextInput,
 	Filter,
-    BooleanField, BooleanInput
+    BooleanField, BooleanInput,
+    DateField, DateInput,
+    NumberField, NumberInput,
 } from 'admin-on-rest';
+
+// const NumberField = ({ source, record = {} }) => <span>{record[source]}</span>;
 	
 const UserFilter = (props) => (
     <Filter {...props}>
@@ -16,10 +20,10 @@ const UserFilter = (props) => (
 export const UserList = (props) => (
     <List {...props} filters={<UserFilter/>}>
         <Datagrid>
-            <TextField source="id" />
-            <BooleanField source="account.active" />
-            <TextField source="profile.email" />
-            <TextField source="account.expiredDate" />
+            <BooleanField label="Active?" source="account.active" />
+            <TextField label="Email" source="profile.email" />
+            <DateField label="Expired Date" source="account.expiredDate" />
+            <NumberField label="Duration" source="profile.duration" />
             <EditButton />
         </Datagrid>
     </List>
@@ -34,8 +38,9 @@ export const UserEdit = (props) => (
         <SimpleForm>
             <DisabledInput source="id" />
             <BooleanInput label="Active?" source="account.active" />
-            <TextInput source="profile.email" />
-            <TextInput source="account.expiredDate" />
+            <TextInput label="Email" source="profile.email" />
+            <DateInput label="Expired Date" source="account.expiredDate" />
+            <NumberInput label="Duration" source="profile.duration" />
         </SimpleForm>
     </Edit>
 );
