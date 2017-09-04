@@ -14,6 +14,7 @@ import { List, Edit, Create, Datagrid, ReferenceField, TextField,
 const UserFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
+        <BooleanInput label="Active?" source="account.active" alwaysOn />
     </Filter>
 );
 
