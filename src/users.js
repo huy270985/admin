@@ -23,7 +23,7 @@ export const UserList = (props) => (
         <Datagrid>
             <BooleanField label="Active?" source="account.active" />
             <TextField label="Email" source="profile.email" />
-            <DateField label="Expired Date" source="account.expiredDate" />
+            <DateField label="Start Date" source="profile.startDate" />
             <NumberField label="Duration" source="profile.duration" />
             <EditButton />
         </Datagrid>
