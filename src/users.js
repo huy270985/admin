@@ -40,7 +40,7 @@ export const UserEdit = (props) => (
             <DisabledInput source="id" />
             <BooleanInput label="Active?" source="account.active" />
             <TextInput label="Email" source="profile.email" />
-            <DateInput label="Expired Date" source="account.expiredDate" />
+            <DateInput label="Expired Date" source="profile.startDate" />
             <NumberInput label="Duration" source="profile.duration" />
         </SimpleForm>
     </Edit>
