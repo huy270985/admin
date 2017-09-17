@@ -14,14 +14,15 @@ import { List, Edit, Create, Datagrid, ReferenceField, TextField,
 const UserFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
-        <BooleanInput label="Active?" source="account.active" alwaysOn />
+        <BooleanInput label="Active?" source="account.active" alwaysOn defaultValue={true}/>
     </Filter>
 );
 
 export const UserList = (props) => (
-    <List {...props} filters={<UserFilter/>}>
+    <List {...props} filters={<UserFilter/>} perPage={100}>
         <Datagrid>
             <BooleanField label="Active?" source="account.active" />
+            <TextField label="Name" source="profile.fullName" />
             <TextField label="Email" source="profile.email" />
             <DateField label="Start Date" source="profile.startDate" />
             <NumberField label="Duration" source="profile.duration" />
