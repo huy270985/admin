@@ -14,7 +14,7 @@ import { List, Edit, Create, Datagrid, ReferenceField, TextField,
 const UserFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
-        <BooleanInput label="Active?" source="account.active" alwaysOn defaultValue={true}/>
+        <BooleanInput label="Active?" source="account.active" defaultValue={true} alwaysOn/>
     </Filter>
 );
 
@@ -25,6 +25,7 @@ export const UserList = (props) => (
             <TextField label="Name" source="profile.fullName" />
             <TextField label="Email" source="profile.email" />
             <DateField label="Start Date" source="profile.startDate" />
+            <DateField label="Expired Date" source="account.expiredAt" />
             <NumberField label="Duration" source="profile.duration" />
             <EditButton />
         </Datagrid>
@@ -40,6 +41,7 @@ export const UserEdit = (props) => (
         <SimpleForm>
             <DisabledInput source="id" />
             <BooleanInput label="Active?" source="account.active" />
+            <TextInput label="Name" source="profile.fullName" />
             <TextInput label="Email" source="profile.email" />
             <DateInput label="Start Date" source="profile.startDate" />
             <NumberInput label="Duration" source="profile.duration" />
