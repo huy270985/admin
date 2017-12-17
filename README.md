@@ -116,6 +116,15 @@ We commit to keeping the breaking changes minimal so you can upgrade `react-scri
 
 We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
 
+## aor-firebase-link
+```
+npm link # in aor-firebase-client folder
+npm link aor-firebase-client # in this project folder
+
+# make update then in aor-firebase-client
+npm run build
+```
+
 ## Folder Structure
 
 After creation, your project should look like this:
